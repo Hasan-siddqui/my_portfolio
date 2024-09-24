@@ -77,3 +77,66 @@ $(document).ready(function(){
         }
     });
 });
+
+
+
+
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        }, false);
+
+        // Disable specific keyboard shortcuts
+        document.onkeydown = function (e) {
+            // Prevent F12, Ctrl + Shift + I, and Ctrl + U
+            if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I") || (e.ctrlKey && e.key === "U")) {
+                e.preventDefault();
+                return false;
+            }
+        };
+
+        // Block Ctrl + U
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault(); // Prevent the default action
+                // alert("The 'View Source' feature is disabled on this page.");
+            }
+        });
+        // Block Ctrl + Shift + J
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.shiftKey && e.key === "J") {
+                e.preventDefault(); // Prevent the default action
+                // alert("The 'View Source' feature is disabled on this page.");
+            }
+        });
+        // Block Ctrl + Shift + c
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.shiftKey && e.key === "C") {
+                e.preventDefault(); // Prevent the default action
+                // alert("The 'View Source' feature is disabled on this page.");
+            }
+        });
+
+
+        // Prevent image dragging
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+
+        // Preventing right-click on images specifically
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+        });
+
+        // Prevent copying text
+        document.addEventListener('copy', function (e) {
+            e.preventDefault();
+            alert("Copying text is disabled.");
+        });
+
+        // Preventing selection of text
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
