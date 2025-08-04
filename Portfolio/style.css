@@ -451,7 +451,6 @@ img {
     align-items: center;
     position: relative;
     z-index: 1;
-    padding-top: 50px;
 }
 
 .hero-content {
@@ -1163,9 +1162,9 @@ display: flex;
     transform: translateX(-20px);
 }
 
-/* [data-animation="fadeInRight"] {
+[data-animation="fadeInRight"] {
     transform: translateX(20px);
-} */
+}
 
 [data-animation].animate {
     opacity: 1;

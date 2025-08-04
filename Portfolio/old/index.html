@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
-    <meta name="theme-color" content="#6c63ff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Developer Portfolio</title>
     <meta name="description" content="Professional Web Developer Portfolio">
+    <meta name="theme-color" content="#6c63ff">
     <link rel="manifest" href="manifest.json">
 
     <!-- Fav icons -->
@@ -19,19 +17,16 @@
     <link rel="icon" sizes="512x512" href="img/icon/web-app-manifest-512x512.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Tiny Slider CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
-
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
 </head>
-
 <body>
     <!-- Preloader -->
     <div class="preloader">
@@ -98,10 +93,8 @@
                     <span class="title-line"><span class="text-stroke">Nurul</span> Hasan</span>
                     <span class="title-line">Web Developer</span>
                 </h1>
-                <p class="hero-subtitle" data-animation="fadeInUp" data-delay="0.2s">Creative Web Developer & UI
-                    Enthusiast</p>
-                <p class="hero-subtitle" data-animation="fadeInUp" data-delay="0.3s">I build responsive and
-                    high-performance websites that transform ideas into real, engaging digital experiences.</p>
+                <p class="hero-subtitle" data-animation="fadeInUp" data-delay="0.2s">Creative Web Developer & UI Enthusiast</p>
+                <p class="hero-subtitle" data-animation="fadeInUp" data-delay="0.3s">I build responsive and high-performance websites that transform ideas into real, engaging digital experiences.</p>
                 <div class="hero-buttons" data-animation="fadeInUp" data-delay="0.4s">
                     <a href="#portfolio" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
@@ -109,10 +102,15 @@
             </div>
             <div class="hero-image" data-animation="fadeInRight">
                 <div class="image-wrapper">
-                    <img src="/img/banner.jpg" alt="Web Developer">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Developer">
                 </div>
             </div>
         </div>
+        <!-- <div class="hero-shape">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"></path>
+            </svg>
+        </div> -->
     </section>
 
     <!-- About Section -->
@@ -125,16 +123,12 @@
             <div class="about-content">
                 <div class="about-image" data-animation="fadeInLeft">
                     <div class="image-wrapper">
-                        <img src="/img/hasan.jpg" alt="About Me">
+                        <img src="https://placehold.co/500x560" alt="About Me">
                     </div>
                 </div>
                 <div class="about-text" data-animation="fadeInRight">
                     <h3>Who am I?</h3>
-                    <p>Dynamic Web Developer with 2+ years of experience in building responsive, mobile-friendly
-                        applications using HTML5, CSS3, SCSS, Bootstrap, Tailwind, JavaScript, jQuery, WordPress, and
-                        React.js. Passionate about SEO optimization and improving website visibility. Skilled in PSD-to
-                        HTML conversion with W3C-compliant code. Expanding expertise in Node.js and backend
-                        development with PHP and MySQL. </p>
+                    <p>I'm a passionate web developer with 3+ years of experience creating modern, responsive websites and web applications. I specialize in front-end development but also have strong back-end skills.</p>
                     <div class="skills">
                         <div class="skill-item">
                             <div class="skill-info">
@@ -261,7 +255,8 @@
             <div class="portfolio-filter" data-animation="fadeInUp">
                 <ul>
                     <li class="active" data-filter="*">All</li>
-                    <li data-filter=".web">Web Development</li>
+                    <li data-filter=".web">Web Design</li>
+                    <li data-filter=".app">Web App</li>
                     <li data-filter=".ecommerce">E-commerce</li>
                 </ul>
             </div>
@@ -269,72 +264,132 @@
                 <div class="portfolio-item web" data-animation="fadeInUp">
                     <div class="portfolio-item-inner">
                         <div class="portfolio-image">
-                            <img src="/img/tangio-thumb.jpg" alt="Project 1">
+                            <img src="https://placehold.co/370x320" alt="Project 1">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3>Creative Design Agency</h3>
-                            <p>Web Development</p>
-                            <a href="https://tangio.in/" class="portfolio-link"><i class="fas fa-link"></i></a>
+                            <h3>Creative Agency</h3>
+                            <p>Web Design</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item web" data-animation="fadeInUp" data-delay="0.2s">
+                <div class="portfolio-item app" data-animation="fadeInUp" data-delay="0.2s">
                     <div class="portfolio-item-inner">
                         <div class="portfolio-image">
-                            <img src="/img/toc-thumb.jpg" alt="Project 2">
+                            <img src="https://placehold.co/370x320" alt="Project 2">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3>Media Production House</h3>
-                            <p>Web Development</p>
-                            <a href="https://toccombine.in/" class="portfolio-link"><i class="fas fa-link"></i></a>
+                            <h3>Dashboard UI</h3>
+                            <p>Web Application</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item ecommerce" data-animation="fadeInUp" data-delay="0.4s">
                     <div class="portfolio-item-inner">
                         <div class="portfolio-image">
-                            <img src="/img/rn-thumb.jpg" alt="Project 3">
+                            <img src="https://placehold.co/370x320" alt="Project 3">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3>Book E-commerce Website</h3>
+                            <h3>Fashion Store</h3>
                             <p>E-commerce</p>
-                            <a href="https://radhanikunj.org/order-books/" class="portfolio-link"><i class="fas fa-link"></i></a>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item web" data-animation="fadeInUp">
                     <div class="portfolio-item-inner">
                         <div class="portfolio-image">
-                            <img src="/img/moi-custom-map-thumb.png" alt="Project 4">
+                            <img src="https://placehold.co/370x320" alt="Project 4">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3>Custom Maps of India</h3>
-                            <p>Web Development</p>
-                            <a href="https://www.mapsofindia.com/custom-maps/" class="portfolio-link"><i class="fas fa-link"></i></a>
+                            <h3>Portfolio Website</h3>
+                            <p>Web Design</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item web" data-animation="fadeInUp" data-delay="0.2s">
+                <div class="portfolio-item app" data-animation="fadeInUp" data-delay="0.2s">
                     <div class="portfolio-item-inner">
                         <div class="portfolio-image">
-                            <img src="/img/mappingdigiworld-thumb.jpg" alt="Project 5">
+                            <img src="https://placehold.co/370x320" alt="Project 5">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3>GIS Mapping Services</h3>
-                            <p>Web Development</p>
-                            <a href="https://www.mappingdigiworld.com/" class="portfolio-link"><i class="fas fa-link"></i></a>
+                            <h3>Task Manager</h3>
+                            <p>Web Application</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item web" data-animation="fadeInUp" data-delay="0.4s">
+                <div class="portfolio-item ecommerce" data-animation="fadeInUp" data-delay="0.4s">
                     <div class="portfolio-item-inner">
                         <div class="portfolio-image">
-                            <img src="/img/ishan-thumb.jpg" alt="Project 6">
+                            <img src="https://placehold.co/370x320" alt="Project 6">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3>Media Production Portfolio</h3>
-                            <p>Web Development</p>
-                            <a href="https://ishanechoes.com/" class="portfolio-link"><i class="fas fa-link"></i></a>
+                            <h3>Electronics Store</h3>
+                            <p>E-commerce</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="section-header" data-animation="fadeInUp">
+                <h2 class="section-title">Client <span>Testimonials</span></h2>
+                <p class="section-subtitle">What my clients say about me</p>
+            </div>
+            <div class="testimonials-slider" data-animation="fadeInUp">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>"John transformed our outdated website into a modern, user-friendly platform that has significantly increased our online conversions. His attention to detail and technical expertise were impressive."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>CEO, TechSolutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>"Working with John was a pleasure. He delivered our e-commerce site ahead of schedule and under budget. The site performs flawlessly and has helped us expand our customer base."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <span>Founder, UrbanFashion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>"John's ability to understand our complex requirements and translate them into a beautiful, functional web application was remarkable. We continue to work with him on all our web projects."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <span>Director, HealthMetrics</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -380,13 +435,14 @@
                     </div>
                     <div class="contact-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/hasan07755/"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/Hasan-Siddqui"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="contact-form" data-animation="fadeInRight">
-                    <form id="contactForm" action="https://formspree.io/f/mblkaewo" method="POST">
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                             <div class="form-error"></div>
@@ -420,13 +476,14 @@
                     <a href="#">Hasan<span>.</span></a>
                 </div>
                 <div class="footer-text" data-animation="fadeInUp" data-delay="0.2s">
-                    <p>© 2025 Hasan Siddiqui | Handcrafted with ❤️ using HTML, CSS & JavaScript </p>
+                    <p>© 2025 Hasan Siddiqui | Handcrafted with ❤️ using HTML, CSS & JavaScript  </p>
                 </div>
                 <div class="footer-social" data-animation="fadeInUp" data-delay="0.4s">
-                    <a href="https://www.facebook.com/hasan.saam.96"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/_hasan.28/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/hasan07755/"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Hasan-siddqui"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -439,21 +496,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
-
+    
     <!-- Tiny Slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
-
+    
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
+    
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    
     <!-- Vanilla Tilt -->
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
-
+    
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
 
 </html>
+

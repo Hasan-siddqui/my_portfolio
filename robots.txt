@@ -1,0 +1,6 @@
+[file name]: robots.txt
+[file content begin]
+User-agent: *
+Allow: /
+Sitemap: https://hasan-siddqui.github.io/my_portfolio/sitemap.xml
+[file content end]

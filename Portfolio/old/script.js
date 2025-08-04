@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initActiveNavLinks();
     initPortfolioFilter();
     initSkillsAnimation();
+    initTestimonialSlider();
     initContactForm();
     initThemeToggle();
     initScrollProgress();
@@ -132,36 +133,36 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initSmoothScrolling() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // First check if ScrollTo plugin is available
-                    if (typeof gsap.utils.toArray !== 'undefined' && gsap.utils.toArray(targetElement).length) {
-                        gsap.to(window, {
-                            duration: 0.8,
-                            ease: "power2.inOut",
-                            scrollTo: {
-                                y: targetElement,
-                                offsetY: 80
-                            }
-                        });
-                    } else {
-                        // Fallback to native scrolling if GSAP ScrollTo isn't available
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // First check if ScrollTo plugin is available
+                if (typeof gsap.utils.toArray !== 'undefined' && gsap.utils.toArray(targetElement).length) {
+                    gsap.to(window, {
+                        duration: 0.8,
+                        ease: "power2.inOut",
+                        scrollTo: {
+                            y: targetElement,
+                            offsetY: 80
+                        }
+                    });
+                } else {
+                    // Fallback to native scrolling if GSAP ScrollTo isn't available
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
-            });
+            }
         });
-    }
+    });
+}
 
     // Update the initActiveNavLinks function in script.js
     function initActiveNavLinks() {
@@ -226,60 +227,38 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Update the initPortfolioFilter function in script.js
     function initPortfolioFilter() {
         const filterItems = document.querySelectorAll('.portfolio-filter ul li');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
-        const portfolioGrid = document.querySelector('.portfolio-grid');
 
         if (filterItems.length && portfolioItems.length) {
-            // Initialize Isotope (if you want fancy filtering animations)
-            // First, check if Isotope is loaded
-            if (typeof Isotope !== 'undefined') {
-                const iso = new Isotope(portfolioGrid, {
-                    itemSelector: '.portfolio-item',
-                    layoutMode: 'fitRows',
-                    transitionDuration: '0.7s'
-                });
+            filterItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove active class from all filter items
+                    filterItems.forEach(i => i.classList.remove('active'));
 
-                filterItems.forEach(item => {
-                    item.addEventListener('click', function () {
-                        // Remove active class from all filter items
-                        filterItems.forEach(i => i.classList.remove('active'));
-                        // Add active class to clicked item
-                        this.classList.add('active');
+                    // Add active class to clicked item
+                    this.classList.add('active');
 
-                        const filterValue = this.getAttribute('data-filter');
-                        iso.arrange({ filter: filterValue });
+                    const filterValue = this.getAttribute('data-filter');
+
+                    // Show/hide portfolio items based on filter
+                    portfolioItems.forEach(item => {
+                        if (filterValue === '*' || item.classList.contains(filterValue.replace('.', ''))) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
                     });
                 });
-            } else {
-                // Fallback to simple filtering if Isotope isn't available
-                filterItems.forEach(item => {
-                    item.addEventListener('click', function () {
-                        // Remove active class from all filter items
-                        filterItems.forEach(i => i.classList.remove('active'));
-                        // Add active class to clicked item
-                        this.classList.add('active');
-
-                        const filterValue = this.getAttribute('data-filter');
-
-                        // Show/hide portfolio items based on filter
-                        portfolioItems.forEach(item => {
-                            if (filterValue === '*' || item.classList.contains(filterValue.replace('.', ''))) {
-                                item.style.display = 'block';
-                                setTimeout(() => {
-                                    item.style.opacity = '1';
-                                }, 10);
-                            } else {
-                                item.style.opacity = '0';
-                                setTimeout(() => {
-                                    item.style.display = 'none';
-                                }, 300);
-                            }
-                        });
-                    });
-                });
-            }
+            });
 
             // Initialize portfolio modals
             initPortfolioModals();
@@ -290,86 +269,36 @@ document.addEventListener('DOMContentLoaded', function () {
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         const modalsContainer = document.getElementById('portfolioModals');
 
-        // Project data with descriptions and technologies
-        const projectData = [
-            {
-                title: "Creative Design Agency",
-                category: "Web Development",
-                description: "Developed and maintained the official website for Tangio Brand Solution—a creative studio focused on branding and media. Developed a fully responsive, custom WordPress theme reflecting the company’s design ethos. Enhanced UI with animations, mobile responsiveness, and implemented SEO best practices for better visibility and search engine performance.",
-                technologies: ["WordPress","HTML5", "CSS3", "JavaScript", "GSAP", "Responsive Design"],
-                link: "https://tangio.in/"  
-            },
-            {
-                title: "Media Production & Accessibility Specialist",
-                category: "Web Development",
-                description: "Developed a fully custom, responsive website for TOC Combine—a 360º media creative agency. Built brand-aligned pages that showcase films, services, press mentions, and a diverse project portfolio. Focused on mobile-first design and smooth transitions using GSAP and jQuery. Integrated SEO elements to improve discoverability and indexing across search engines.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "GSAP Animation", "PPHPMailer", "Responsive Design"],
-                link: "https://toccombine.in/"
-            },
-            {
-                title: "Book E-commerce Website",
-                category: "E-commerce",
-                description: "Built a WooCommerce-powered platform for selling books. Managed product listings, order workflows, and integrated audio/video features for a rich user experience.",
-                technologies: ["WordPress", "HTML", "CSS", "JavaScript", "WooCommerce", "PHP", "MySQL", "jQuery"],
-                link: "https://radhanikunj.org/order-books/"
-            },
-            {
-                title: "Custom Maps of India",
-                category: "Web Development",
-                description: "Designed and developed a feature-rich custom map website for Maps of India. The site includes multiple internal pages, each showcasing different categories of custom maps such as political, thematic, business, and educational maps. Built the interface from scratch using HTML5/CSS3 and jQuery, ensuring full responsiveness and cross-browser compatibility. Integrated Slick Slider for smooth image carousels and developed dynamic layout structures to visually organize map content. Implemented jQuery-based animations and category filters to enhance navigation and user interaction.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "SLick Slider"],
-                link: "https://www.mapsofindia.com/custom-maps/"
-            },
-            {
-                title: "GIS Mapping Services",
-                category: "Web Development",
-                description: "Developed and maintained a sophisticated mapping-focused platform for Mapping Digiworld—the business services arm of MapsofIndia. The site showcases a comprehensive range of custom GIS and thematic map solutions including village‑level, pin‑code, city ward, election, education, business intelligence, and specialized industry‑oriented maps. Leveraged a clean, responsive layout to present various mapping categories and sample images that support enterprise and educational use cases.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "Slick Slider"],
-                link: "https://www.mappingdigiworld.com/"
-            },
-            {
-                title: "Media Production Portfolio",
-                category: "Web Development",
-                description: "Designed and developed a bespoke, responsive website for Ishan Echoes—a Delhi/Noida-based media consultancy and production house specializing in documentaries, public service films, fiction, and animation content for government and NGO clients. The site presents their cinematic portfolio in a clean, visually engaging layout with seamless navigation through case studies, team bios, and client work galleries. Dynamic sections include categories like Public Service Ads, Short and Long Non‑Fiction, Fiction, and Animation.",
-                technologies: ["WordPress", "WooCommerce", "PHP", "MySQL"],
-                link: "https://ishanechoes.com/"
-            }
-        ];
-
         // Create modals for each portfolio item
         portfolioItems.forEach((item, index) => {
-            const project = projectData[index] || {
-                title: 'Project',
-                category: 'Web Design',
-                description: 'A professional project showcasing my skills and expertise.',
-                technologies: ['HTML5', 'CSS3', 'JavaScript'],
-                link: '#'
-            };
+            const title = item.querySelector('h3')?.textContent || 'Project';
+            const category = item.querySelector('p')?.textContent || 'Web Design';
+            const imageSrc = item.querySelector('img')?.src || '';
 
             const modalHTML = `
-            <div class="modal" id="modal-${index}">
-                <div class="modal-content">
-                    <span class="modal-close">&times;</span>
-                    <div class="modal-body">
-                        <div class="modal-image">
-                            <img src="${item.querySelector('img')?.src || ''}" alt="${project.title}">
-                        </div>
-                        <div class="modal-text">
-                            <h3>${project.title}</h3>
-                            <span class="modal-category">${project.category}</span>
-                            <p>${project.description}</p>
-                            <div class="modal-tech">
-                                <h4>Technologies Used:</h4>
-                                <ul>
-                                    ${project.technologies.map(tech => `<li>${tech}</li>`).join('')}
-                                </ul>
+                <div class="modal" id="modal-${index}">
+                    <div class="modal-content">
+                        <span class="modal-close">&times;</span>
+                        <div class="modal-body">
+                            <div class="modal-image">
+                                <img src="${imageSrc}" alt="${title}">
                             </div>
-                            <a href="${project.link}" class="btn btn-primary">View Project</a>
+                            <div class="modal-text">
+                                <h3>${title}</h3>
+                                <span class="modal-category">${category}</span>
+                                <p>${getProjectDescription(category)}</p>
+                                <div class="modal-tech">
+                                    <h4>Technologies Used:</h4>
+                                    <ul>
+                                        ${getTechnologies(category).map(tech => `<li>${tech}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn btn-primary">View Project</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
 
             modalsContainer.insertAdjacentHTML('beforeend', modalHTML);
 
@@ -400,6 +329,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.stopPropagation();
             });
         });
+    }
+
+    function getProjectDescription(category) {
+        const descriptions = {
+            'Web Design': 'A beautifully designed website with focus on user experience and modern aesthetics. Responsive across all devices with optimized performance.',
+            'Web Application': 'A full-featured web application with interactive elements, user authentication, and real-time data processing.',
+            'E-commerce': 'A complete online store with product management, shopping cart, secure checkout, and payment gateway integration.'
+        };
+        return descriptions[category] || 'A professional project showcasing my skills and expertise.';
+    }
+
+    function getTechnologies(category) {
+        const tech = {
+            'Web Design': ['HTML5', 'CSS3', 'JavaScript', 'GSAP', 'Responsive Design'],
+            'Web Application': ['React', 'Node.js', 'Express', 'MongoDB', 'REST API'],
+            'E-commerce': ['Shopify', 'WooCommerce', 'Payment Gateways', 'Inventory Management']
+        };
+        return tech[category] || ['HTML5', 'CSS3', 'JavaScript'];
     }
 
     function initSkillsAnimation() {
@@ -437,9 +384,9 @@ document.addEventListener('DOMContentLoaded', function () {
         skillsSection.appendChild(canvas);
 
         const skillsData = {
-            labels: ['HTML/CSS', 'JavaScript', 'Wordpress', 'PHP', 'UI/UX', 'SEO', 'React'],
+            labels: ['HTML/CSS', 'JavaScript', 'React', 'Node.js', 'UI/UX', 'SEO'],
             datasets: [{
-                data: [95, 90, 95, 70, 85, 90, 80],
+                data: [95, 90, 85, 80, 75, 70],
                 backgroundColor: [
                     'rgba(108, 99, 255, 0.7)',
                     'rgba(108, 99, 255, 0.6)',
@@ -499,6 +446,76 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function initTestimonialSlider() {
+        const testimonials = document.querySelectorAll('.testimonial-item');
+        const totalTestimonials = testimonials.length;
+        const sliderContainer = document.querySelector('.testimonials-slider');
+
+        if (sliderContainer && testimonials.length > 0) {
+            let currentTestimonial = 0;
+
+            function showTestimonial(index) {
+                gsap.to(testimonials, {
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        testimonials.forEach(t => t.style.display = 'none');
+                        testimonials[index].style.display = 'block';
+                        gsap.to(testimonials[index], {
+                            opacity: 1,
+                            duration: 0.5
+                        });
+
+                        // Add animation to testimonial content
+                        gsap.from(testimonials[index].querySelector('.testimonial-content'), {
+                            y: 30,
+                            opacity: 0,
+                            duration: 0.8,
+                            ease: 'power2.out'
+                        });
+                    }
+                });
+            }
+
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+                showTestimonial(currentTestimonial);
+            }
+
+            function prevTestimonial() {
+                currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+                showTestimonial(currentTestimonial);
+            }
+
+            // Create navigation arrows
+            const navHTML = `
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            `;
+            sliderContainer.insertAdjacentHTML('beforeend', navHTML);
+
+            // Add event listeners for navigation
+            document.querySelector('.testimonial-prev').addEventListener('click', prevTestimonial);
+            document.querySelector('.testimonial-next').addEventListener('click', nextTestimonial);
+
+            // Auto-rotate testimonials every 5 seconds
+            let testimonialInterval = setInterval(nextTestimonial, 5000);
+
+            // Pause on hover
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(testimonialInterval);
+            });
+
+            sliderContainer.addEventListener('mouseleave', () => {
+                testimonialInterval = setInterval(nextTestimonial, 5000);
+            });
+
+            // Show first testimonial initially
+            showTestimonial(0);
+        }
+    }
 
     function initContactForm() {
         const contactForm = document.getElementById('contactForm');

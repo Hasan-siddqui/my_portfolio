@@ -1,0 +1,6 @@
+[file name]: robots.txt
+[file content begin]
+User-agent: *
+Allow: /
+Sitemap: https://yourdomain.com/sitemap.xml
+[file content end]

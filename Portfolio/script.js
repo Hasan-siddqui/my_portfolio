@@ -293,46 +293,46 @@ document.addEventListener('DOMContentLoaded', function () {
         // Project data with descriptions and technologies
         const projectData = [
             {
-                title: "Creative Design Agency",
+                title: "Creative Agency",
                 category: "Web Development",
-                description: "Developed and maintained the official website for Tangio Brand Solution—a creative studio focused on branding and media. Developed a fully responsive, custom WordPress theme reflecting the company’s design ethos. Enhanced UI with animations, mobile responsiveness, and implemented SEO best practices for better visibility and search engine performance.",
-                technologies: ["WordPress","HTML5", "CSS3", "JavaScript", "GSAP", "Responsive Design"],
-                link: "https://tangio.in/"  
+                description: "A modern agency website with responsive design and smooth animations built for a creative studio specializing in digital marketing.",
+                technologies: ["HTML5", "CSS3", "JavaScript", "GSAP", "Responsive Design"],
+                link: "#"
             },
             {
-                title: "Media Production & Accessibility Specialist",
+                title: "Dashboard UI",
                 category: "Web Development",
-                description: "Developed a fully custom, responsive website for TOC Combine—a 360º media creative agency. Built brand-aligned pages that showcase films, services, press mentions, and a diverse project portfolio. Focused on mobile-first design and smooth transitions using GSAP and jQuery. Integrated SEO elements to improve discoverability and indexing across search engines.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "GSAP Animation", "PPHPMailer", "Responsive Design"],
-                link: "https://toccombine.in/"
+                description: "Interactive admin dashboard with real-time data visualization and customizable widgets for business analytics.",
+                technologies: ["React", "Chart.js", "Tailwind CSS", "REST API"],
+                link: "#"
             },
             {
                 title: "Book E-commerce Website",
                 category: "E-commerce",
-                description: "Built a WooCommerce-powered platform for selling books. Managed product listings, order workflows, and integrated audio/video features for a rich user experience.",
-                technologies: ["WordPress", "HTML", "CSS", "JavaScript", "WooCommerce", "PHP", "MySQL", "jQuery"],
-                link: "https://radhanikunj.org/order-books/"
+                description: "Full-featured online bookstore with payment gateway integration, inventory management, and book recommendation system.",
+                technologies: ["WordPress", "WooCommerce", "PHP", "MySQL", "jQuery"],
+                link: "#"
             },
             {
-                title: "Custom Maps of India",
+                title: "Portfolio Website",
                 category: "Web Development",
-                description: "Designed and developed a feature-rich custom map website for Maps of India. The site includes multiple internal pages, each showcasing different categories of custom maps such as political, thematic, business, and educational maps. Built the interface from scratch using HTML5/CSS3 and jQuery, ensuring full responsiveness and cross-browser compatibility. Integrated Slick Slider for smooth image carousels and developed dynamic layout structures to visually organize map content. Implemented jQuery-based animations and category filters to enhance navigation and user interaction.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "SLick Slider"],
-                link: "https://www.mapsofindia.com/custom-maps/"
+                description: "Custom portfolio website with unique animations, dark mode, and project showcase for a freelance photographer.",
+                technologies: ["HTML5", "CSS3", "JavaScript", "GSAP", "Particles.js"],
+                link: "#"
             },
             {
-                title: "GIS Mapping Services",
+                title: "Task Manager",
                 category: "Web Development",
-                description: "Developed and maintained a sophisticated mapping-focused platform for Mapping Digiworld—the business services arm of MapsofIndia. The site showcases a comprehensive range of custom GIS and thematic map solutions including village‑level, pin‑code, city ward, election, education, business intelligence, and specialized industry‑oriented maps. Leveraged a clean, responsive layout to present various mapping categories and sample images that support enterprise and educational use cases.",
-                technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "Slick Slider"],
-                link: "https://www.mappingdigiworld.com/"
+                description: "Productivity app with drag-and-drop interface, team collaboration features, and cloud sync across devices.",
+                technologies: ["React", "Node.js", "MongoDB", "Express"],
+                link: "#"
             },
             {
-                title: "Media Production Portfolio",
-                category: "Web Development",
-                description: "Designed and developed a bespoke, responsive website for Ishan Echoes—a Delhi/Noida-based media consultancy and production house specializing in documentaries, public service films, fiction, and animation content for government and NGO clients. The site presents their cinematic portfolio in a clean, visually engaging layout with seamless navigation through case studies, team bios, and client work galleries. Dynamic sections include categories like Public Service Ads, Short and Long Non‑Fiction, Fiction, and Animation.",
+                title: "Electronics Store",
+                category: "E-commerce",
+                description: "Online electronics shop with advanced product filtering, customer reviews, and comparison tools.",
                 technologies: ["WordPress", "WooCommerce", "PHP", "MySQL"],
-                link: "https://ishanechoes.com/"
+                link: "#"
             }
         ];
 
